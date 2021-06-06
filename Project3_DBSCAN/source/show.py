@@ -115,8 +115,8 @@ class DBSCAN:
 def main(input_f, n, eps, minpts):
     start = time.time()
     data = pd.read_csv(input_f, header = None, sep = '\t', names = ['key', 'x', 'y'])
-    #data.plot.scatter(x = 'x', y = 'y')
-    #plt.show(block = True)
+    data.plot.scatter(x = 'x', y = 'y')
+    plt.show(block = True)
     dbscan = DBSCAN(data ,int(n), int(eps), int(minpts), input_f[:-4])
     print(time.time() - start)
 

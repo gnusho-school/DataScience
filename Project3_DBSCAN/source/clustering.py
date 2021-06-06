@@ -36,7 +36,7 @@ class DBSCAN:
 
         self.Clusters = []
         self.cluster()
-        
+
         self.write_clusters()
 
     def write_clusters(self):
@@ -76,7 +76,9 @@ class DBSCAN:
             while True:
                 if q.qsize() == 0: break
                 now = q.get()
+
                 if now not in self.Core: continue
+                # for문 안에서 계속 확인하는 것보다 이게 나을것이라 생각함
 
                 for point in self.Neighbors[now]:
                     if visit[point]: continue
